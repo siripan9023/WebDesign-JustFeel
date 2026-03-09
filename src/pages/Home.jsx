@@ -104,7 +104,7 @@ function HorizontalScrollList({ movies }) {
     return (
         <div className="flex overflow-x-auto space-x-4 pb-4 px-1 snap-x scrollbar-hide">
             {movies.map(movie => (
-                <div key={movie.id} className="flex-none w-40 md:w-56 lg:w-64 scroll-snap-align-start transition-transform hover:z-10">
+                <div key={movie.id} className="flex-none w-40 md:w-56 scroll-snap-align-start transition-transform hover:z-10">
                     <MovieCard movie={movie} />
                 </div>
             ))}

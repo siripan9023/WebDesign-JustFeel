@@ -35,7 +35,7 @@ function MovieDetail() {
     }
 
     // ดึงหนังเรื่องอื่นๆ มาแสดงด้านล่าง
-    const relatedMovies = movies.filter(m => m.id !== movie.id).sort(() => 0.5 - Math.random()).slice(0, 4);
+    const relatedMovies = movies.filter(m => m.id !== movie.id).sort(() => 0.5 - Math.random()).slice(0, 5);
 
     // การแปลง URL Trailer ให้เป็นแบบ Embed
     let embedUrl = movie.trailerUrl;
@@ -45,12 +45,15 @@ function MovieDetail() {
 
     return (
         <main className="relative flex-grow min-h-screen text-white">
-            {/* BACKDROP LAYER */}
-            <div
-                className="absolute inset-0 z-0 bg-cover bg-center opacity-30 filter blur-3xl transform scale-110"
-                style={{ backgroundImage: `url('${movie.poster}')` }}
-            ></div>
-            <div className="absolute inset-0 z-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/40"></div>
+            
+            {/* BACKDROP LAYER - แก้ไขโดยเพิ่ม Wrapper ที่มี overflow-hidden */}
+            <div className="absolute inset-0 pointer-events-none z-0">
+                <div
+                    className="absolute inset-0 bg-cover bg-center opacity-30 filter blur-3xl transform scale-110"
+                    style={{ backgroundImage: `url('${movie.poster}')` }}
+                ></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/40"></div>
+            </div>
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
@@ -149,7 +152,7 @@ function MovieDetail() {
                     {/* RELATED MOVIES */}
                     <div className="col-span-12 mt-16 border-t border-white/10 pt-10">
                         <h2 className="text-2xl font-bold mb-6">You Might Also Like</h2>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
                             {relatedMovies.map(m => <MovieCard key={m.id} movie={m} />)}
                         </div>
                     </div>

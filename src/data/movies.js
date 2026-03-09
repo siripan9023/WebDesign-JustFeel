@@ -199,6 +199,142 @@ const movies = [
             { name: "Max", url: "#" }
         ],
         trailerUrl: "https://www.youtube.com/watch?v=wgFws3AoIUM"
+    },
+    {
+        id: 13,
+        title: "The Pursuit of Happyness",
+        year: 2006,
+        poster: "https://www.themoviedb.org/t/p/w1280/lBYOKAMcxIvuk9s9hMuecB9dPBV.jpg",
+        mood: "Feel Inspired",
+        genre: ["Biography", "Drama"],
+        director: "Gabriele Muccino",
+        runtime: "1h 57m",
+        rating: "IMDb: 8.0/10",
+        synopsis: "A struggling salesman takes custody of his son as he's poised to begin a life-changing professional career.",
+        platforms: [
+            { name: "Netflix", url: "#" },
+            { name: "Amazon Prime", url: "#" }
+        ],
+        trailerUrl: "https://youtu.be/DMOBlEcRuw8?si=AQJxEfQ1fr2an7cT"
+    },
+    {
+        id: 14,
+        title: "Good Will Hunting",
+        year: 1997,
+        poster: "https://www.themoviedb.org/t/p/w1280/z2FnLKpFi1HPO7BEJxdkv6hpJSU.jpg",
+        mood: "Feel Inspired",
+        genre: ["Drama", "Romance"],
+        director: "Gus Van Sant",
+        runtime: "2h 6m",
+        rating: "IMDb: 8.3/10",
+        synopsis: "Will Hunting, a janitor at M.I.T., has a gift for mathematics, but needs help from a psychologist to find direction in his life.",
+        platforms: [
+            { name: "Max", url: "#" },
+            { name: "Hulu", url: "#" }
+        ],
+        trailerUrl: "https://youtu.be/PaZVjZEFkRs?si=_fCIYdmJbe_nq2Gn"
+    },
+    {
+        id: 15,
+        title: "Die Hard",
+        year: 1988,
+        poster: "https://www.themoviedb.org/t/p/w1280/7Bjd8kfmDSOzpmhySpEhkUyK2oH.jpg",
+        mood: "Get Adrenaline",
+        genre: ["Action", "Thriller"],
+        director: "John McTiernan",
+        runtime: "2h 12m",
+        rating: "IMDb: 8.2/10",
+        synopsis: "An NYPD officer tries to save his wife and several others taken hostage by German terrorists during a Christmas party at the Nakatomi Plaza in Los Angeles.",
+        platforms: [
+            { name: "Hulu", url: "#" },
+            { name: "Starz", url: "#" }
+        ],
+        trailerUrl: "https://youtu.be/jaJuwKCmJbY?si=15kl2YjZAj6Gztob"
+    },
+    {
+        id: 16,
+        title: "The Dark Knight",
+        year: 2008,
+        poster: "https://www.themoviedb.org/t/p/w1280/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+        mood: "Get Adrenaline",
+        genre: ["Action", "Crime", "Drama"],
+        director: "Christopher Nolan",
+        runtime: "2h 32m",
+        rating: "IMDb: 9.0/10",
+        synopsis: "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+        platforms: [
+            { name: "Max", url: "#" },
+            { name: "Amazon Prime", url: "#" }
+        ],
+        trailerUrl: "https://youtu.be/EXeTwQWrcwY?si=zytMv0dgiDXzCipD"
+    },
+    {
+        id: 17,
+        title: "Schindler's List",
+        year: 1993,
+        poster: "https://www.themoviedb.org/t/p/w1280/sF1U4EUQS8YHUYjNl3pMGNIQyr0.jpg",
+        mood: "Have a Good Cry",
+        genre: ["Biography", "Drama", "History"],
+        director: "Steven Spielberg",
+        runtime: "3h 15m",
+        rating: "IMDb: 9.0/10",
+        synopsis: "In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.",
+        platforms: [
+            { name: "Amazon Prime", url: "#" },
+            { name: "Apple TV", url: "#" }
+        ],
+        trailerUrl: "https://youtu.be/mxphAlJID9U?si=Dl7J00WX8HcJ30Ko"
+    },
+    {
+        id: 18,
+        title: "Hachi: A Dog's Tale",
+        year: 2009,
+        poster: "https://www.themoviedb.org/t/p/w1280/cuuzSt0dzY6k9xduN9tTSCIUvZ7.jpg",
+        mood: "Have a Good Cry",
+        genre: ["Biography", "Drama", "Family"],
+        director: "Lasse Hallström",
+        runtime: "1h 33m",
+        rating: "IMDb: 8.1/10",
+        synopsis: "A college professor bonds with an abandoned dog he takes into his home.",
+        platforms: [
+            { name: "Amazon Prime", url: "#" },
+            { name: "Vudu", url: "#" }
+        ],
+        trailerUrl: "https://youtu.be/k8qM14qF_Kc?si=jWl_Ylbs0faZlmFg"
+    },
+    // ---- เพิ่มใหม่: Chill Out ----
+    {
+        id: 19,
+        title: "Spirited Away",
+        year: 2001,
+        poster: "https://www.themoviedb.org/t/p/w1280/92KLPoMjIPTA6n190oSsMYCWZr7.jpg",
+        mood: "Chill Out",
+        genre: ["Animation", "Adventure", "Family"],
+        director: "Hayao Miyazaki",
+        runtime: "2h 5m",
+        rating: "IMDb: 8.6/10",
+        synopsis: "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.",
+        platforms: [
+            { name: "Max", url: "#" }
+        ],
+        trailerUrl: "https://youtu.be/ByXuk9QqQkk?si=0jumQWKOAO6aevLH"
+    },
+    {
+        id: 20,
+        title: "Amélie",
+        year: 2001,
+        poster: "https://www.themoviedb.org/t/p/w1280/vZ9NhNbQQ3yhtiC5sbhpy5KTXns.jpg",
+        mood: "Chill Out",
+        genre: ["Comedy", "Romance"],
+        director: "Jean-Pierre Jeunet",
+        runtime: "2h 2m",
+        rating: "IMDb: 8.3/10",
+        synopsis: "Amélie is an innocent and naive girl in Paris with her own sense of justice. She decides to help those around her and, along the way, discovers love.",
+        platforms: [
+            { name: "Amazon Prime", url: "#" },
+            { name: "Apple TV", url: "#" }
+        ],
+        trailerUrl: "https://youtu.be/HUECWi5pX7o?si=_3euwLhyNQ2HnHRR"
     }
 ];
 
