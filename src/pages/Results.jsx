@@ -4,17 +4,15 @@ import MovieCard from '../components/MovieCard';
 import movies from '../data/movies';
 
 function Results() {
-    // สร้าง State สำหรับเก็บค่าจาก Filter
+
     const [selectedMood, setSelectedMood] = useState(localStorage.getItem('selectedMood') || '');
     const [filterYear, setFilterYear] = useState('all');
     const [filterGenre, setFilterGenre] = useState('all');
     const [filterRating, setFilterRating] = useState('all');
 
-    // ดึงรายการ Year และ Genre แบบไม่ซ้ำกันเพื่อสร้าง Dropdown
     const uniqueYears = useMemo(() => [...new Set(movies.map(m => m.year))].sort((a, b) => b - a), []);
     const uniqueGenres = useMemo(() => [...new Set(movies.flatMap(m => m.genre))].sort(), []);
 
-    // ฟังก์ชันการกรองหนังตามเงื่อนไข (ทำงานอัตโนมัติเมื่อ State เปลี่ยน)
     const filteredMovies = useMemo(() => {
         return movies.filter(movie => {
             const matchMood = selectedMood ? movie.mood === selectedMood : true;
@@ -28,7 +26,6 @@ function Results() {
         });
     }, [selectedMood, filterYear, filterGenre, filterRating]);
 
-    // ฟังก์ชันล้างค่า Filter ทั้งหมด
     const clearFilters = () => {
         localStorage.removeItem('selectedMood');
         setSelectedMood('');
@@ -97,7 +94,7 @@ function Results() {
                 </div>
             </div>
 
-            {/* Movie Grid - แก้ไขคลาส Grid ตรงนี้ให้ตรงกับหน้า Detail แล้ว */}
+            {/* Movie Grid */}
             {filteredMovies.length > 0 ? (
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
                     {filteredMovies.map(movie => (
@@ -117,7 +114,7 @@ function Results() {
     );
 }
 
-// Component ย่อยสำหรับไอคอนลูกศรใน Dropdown
+// Component
 function FilterIcon() {
     return (
         <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">

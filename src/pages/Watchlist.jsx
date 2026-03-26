@@ -4,9 +4,9 @@ import MovieCard from '../components/MovieCard';
 import movies from '../data/movies';
 
 function Watchlist() {
-    const [activeTab, setActiveTab] = useState('watchlist'); // 'watchlist' หรือ 'history'
+    const [activeTab, setActiveTab] = useState('watchlist');
 
-    // ใช้ข้อมูลจำลอง (Mock data) ตามโค้ดต้นฉบับ
+    // (Mock data)
     const [watchlist, setWatchlist] = useState(movies.slice(0, 4));
     const [history, setHistory] = useState(movies.slice(4, 8));
 
@@ -45,7 +45,7 @@ function Watchlist() {
                         </h2>
 
                         {watchlist.length > 0 ? (
-                            /* แก้ไขคลาส Grid ตรงนี้ */
+                           
                             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
                                 {watchlist.map(movie => (
                                     <MovieCard key={movie.id} movie={movie} context="watchlist" onRemove={handleRemoveFromWatchlist} />
@@ -70,7 +70,7 @@ function Watchlist() {
                         </h2>
 
                         {history.length > 0 ? (
-                            /* แก้ไขคลาส Grid ตรงนี้ */
+                            
                             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
                                 {history.map(movie => (
                                     <MovieCard key={movie.id} movie={movie} context="history" />

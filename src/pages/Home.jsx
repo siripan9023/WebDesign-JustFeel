@@ -6,13 +6,11 @@ import movies from '../data/movies';
 function Home() {
     const navigate = useNavigate();
 
-    // ฟังก์ชันบันทึก Mood ลง localStorage แล้วเปลี่ยนหน้าไปที่ Results
     const handleSelectMood = (mood) => {
         localStorage.setItem('selectedMood', mood);
         navigate('/results');
     };
 
-    // ดึงข้อมูลหนังมาจัดกลุ่ม
     const trendingMovies = [...movies].sort(() => 0.5 - Math.random()).slice(0, 6);
     const inspiredMovies = movies.filter(m => m.mood === 'Feel Inspired');
     const emotionalMovies = movies.filter(m => m.mood === 'Have a Good Cry');
@@ -85,7 +83,7 @@ function Home() {
     );
 }
 
-// Component ย่อยสำหรับปุ่ม Mood
+// Component Mood
 function MoodButton({ mood, icon, title, desc, colorClass, onClick }) {
     return (
         <div onClick={() => onClick(mood)} className="group cursor-pointer relative">
@@ -99,7 +97,7 @@ function MoodButton({ mood, icon, title, desc, colorClass, onClick }) {
     );
 }
 
-// Component ย่อยสำหรับการ์ดแนวนอน
+// Component 
 function HorizontalScrollList({ movies }) {
     return (
         <div className="flex overflow-x-auto space-x-4 pb-4 px-1 snap-x scrollbar-hide">

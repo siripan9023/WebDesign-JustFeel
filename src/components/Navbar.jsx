@@ -4,7 +4,6 @@ import { Link, useLocation } from 'react-router-dom';
 function Navbar() {
   const location = useLocation();
 
-  // ฟังก์ชันเช็คว่าหน้าปัจจุบันตรงกับ Link หรือไม่ เพื่อทำการ Highlight สี
   const isActive = (path) => {
     return location.pathname === path ? 'text-white' : 'text-gray-300';
   };
@@ -14,7 +13,7 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           
-          {/* Left: Logo (เพิ่ม flex-1 และ justify-start) */}
+          {/* Left: Logo */}
           <div className="flex-1 flex justify-start">
             <Link to="/" className="flex-shrink-0 cursor-pointer">
               <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-pink-500">
@@ -23,7 +22,7 @@ function Navbar() {
             </Link>
           </div>
 
-          {/* Center: Navigation Links (เอา flex-1 ออก เพื่อให้มีขนาดพอดีกับตัวหนังสือ) */}
+          {/* Center: Navigation Links */}
           <div className="hidden md:flex justify-center space-x-8">
             <Link to="/" className={`text-sm font-medium hover:text-white transition-colors ${isActive('/')}`}>
               Home
@@ -36,7 +35,7 @@ function Navbar() {
             </Link>
           </div>
 
-          {/* Right: Search & Profile (เพิ่ม flex-1 และ justify-end) */}
+          {/* Right: Search & Profile */}
           <div className="flex-1 flex items-center justify-end space-x-4">
             <div className="hidden md:block relative">
               <input 

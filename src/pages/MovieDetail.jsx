@@ -4,7 +4,7 @@ import MovieCard from '../components/MovieCard';
 import movies from '../data/movies';
 
 function MovieDetail() {
-    const { id } = useParams(); // ดึง id จาก URL เช่น /movie/1
+    const { id } = useParams();
     const [movie, setMovie] = useState(null);
 
     // States สำหรับควบคุม UI
@@ -14,14 +14,13 @@ function MovieDetail() {
     const [isMarkedSeen, setIsMarkedSeen] = useState(false);
 
     useEffect(() => {
-        // ค้นหาหนังจาก ID
+
         const foundMovie = movies.find(m => m.id === parseInt(id));
         setMovie(foundMovie);
-        // รีเซ็ต state เมื่อเปลี่ยนเรื่อง
+
         setIsAddedToList(false);
         setIsMarkedSeen(false);
 
-        // เลื่อนหน้าจอกลับไปด้านบนสุด
         window.scrollTo(0, 0);
     }, [id]);
 
@@ -34,10 +33,8 @@ function MovieDetail() {
         );
     }
 
-    // ดึงหนังเรื่องอื่นๆ มาแสดงด้านล่าง
     const relatedMovies = movies.filter(m => m.id !== movie.id).sort(() => 0.5 - Math.random()).slice(0, 5);
 
-    // การแปลง URL Trailer ให้เป็นแบบ Embed
     let embedUrl = movie.trailerUrl;
     if (embedUrl.includes('watch?v=')) embedUrl = embedUrl.replace('watch?v=', 'embed/');
     else if (embedUrl.includes('youtu.be/')) embedUrl = embedUrl.replace('youtu.be/', 'www.youtube.com/embed/');
@@ -46,8 +43,8 @@ function MovieDetail() {
     return (
         <main className="relative flex-grow min-h-screen text-white">
             
-            {/* BACKDROP LAYER - แก้ไขโดยเพิ่ม Wrapper ที่มี overflow-hidden */}
-            <div className="absolute inset-0 pointer-events-none z-0">
+            {/* BACKDROP LAYER */}
+            <div className="absolute overflow-hidden inset-0 pointer-events-none z-0">
                 <div
                     className="absolute inset-0 bg-cover bg-center opacity-30 filter blur-3xl transform scale-110"
                     style={{ backgroundImage: `url('${movie.poster}')` }}

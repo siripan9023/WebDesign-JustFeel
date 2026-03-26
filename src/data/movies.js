@@ -302,7 +302,6 @@ const movies = [
         ],
         trailerUrl: "https://youtu.be/k8qM14qF_Kc?si=jWl_Ylbs0faZlmFg"
     },
-    // ---- เพิ่มใหม่: Chill Out ----
     {
         id: 19,
         title: "Spirited Away",

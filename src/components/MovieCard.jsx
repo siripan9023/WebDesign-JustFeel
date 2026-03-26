@@ -2,12 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function MovieCard({ movie, context = 'default', onRemove }) {
-    // context สามารถเป็น 'default', 'watchlist', หรือ 'history'
 
     return (
         <div className="group relative w-full bg-slate-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ring-1 ring-white/5 scroll-snap-align-start">
 
-            {/* ปุ่ม Remove สำหรับหน้า Watchlist */}
+            {/* Remove Watchlist */}
             {context === 'watchlist' && (
                 <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
                     <button
@@ -22,7 +21,7 @@ function MovieCard({ movie, context = 'default', onRemove }) {
                 </div>
             )}
 
-            {/* ป้ายกำกับสำหรับหน้า History */}
+            {/* History */}
             {context === 'history' && (
                 <div className="absolute top-2 left-2 z-10">
                     <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-indigo-500/80 text-white backdrop-blur-sm shadow-sm border border-white/20">
